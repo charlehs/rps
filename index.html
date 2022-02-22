@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Rock, Paper, Scissors</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Rock Paper Scissors</h1>
+    <div id="game-container">
+      <div class="game-box">
+        <h2>You: <span id="user-score"></span></h2>
+        <p id="user-input">🧱</p>
+      </div>
+
+      <div class="game-box">
+        <h2>Computer: <span id="computer-score"></span></h2>
+        <p id="computer-input">✂️</p>
+      </div>
+    </div>
+    <h3>Choose One!</h3>
+    <button id="rock-btn" onclick="">Rock</button>
+    <button id="paper-btn" onclick="">Paper</button>
+    <button id="scissors-btn" onclick="">Scissors</button>
+
+    <script src="logic.js" async defer></script>
+  </body>
+</html>

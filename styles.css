@@ -1,0 +1,33 @@
+body {
+  background: #131313;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+p {
+  color: aquamarine;
+}
+
+#game-container {
+  display: flex;
+  /* background: #7e7e7e; */
+  border: solid red 1px;
+  width: 70%;
+  min-height: 25vh;
+  border-radius: 5px;
+  justify-content: space-around;
+}
+
+.game-box {
+  background: #361e9e;
+  display: flex;
+  align-items: center;
+
+  flex-direction: ;
+}
