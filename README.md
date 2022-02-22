@@ -8,7 +8,7 @@ A simple Rock, Paper, Scissors game.
 
 ## Getting Started
 
-Click [here]() for live site.
+Click [here](ttps://charlehs.github.io/rps/) for live site.
 
 ## Version History
 
