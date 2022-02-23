@@ -1,8 +1,13 @@
 "use strict";
 
+//game info
+let gameInfo = document.getElementById("game-info");
+
 //scores
-let userScore = document.getElementById("user-score");
-let compScore = document.getElementById("computer-score");
+let userScore = 0;
+let compScore = 0;
+let userDisplayScore = document.getElementById("user-score");
+let compDisplayScore = document.getElementById("computer-score");
 
 //Display values
 let userValue = document.getElementById("user-input");
@@ -14,14 +19,26 @@ let paperBtn = document.getElementById("paper-btn");
 let scisBtn = document.getElementById("scissors-btn");
 
 let compFinalValue;
-let userFinalValue = ;
+let userFinalValue = "";
 
-// User inputs value 
-const userChoice = () =>{
-    
-}
-// Compare it with computer value
-// decide winner
+// User inputs value
+const userChoiceRock = () => {
+  userFinalValue = "rock";
+  compChoice();
+  compareChoices(userFinalValue, compFinalValue);
+};
+
+const userChoicePaper = () => {
+  userFinalValue = "paper";
+  compChoice();
+  compareChoices(userFinalValue, compFinalValue);
+};
+
+const userChoiceScissors = () => {
+  userFinalValue = "scissors";
+  compChoice();
+  compareChoices(userFinalValue, compFinalValue);
+};
 
 const compChoice = () => {
   // roll a random number between 1-3
@@ -37,37 +54,63 @@ const compChoice = () => {
     compFinalValue = "scissors";
     return compFinalValue;
   }
-  //return either R, P or S
 };
-compChoice();
 
 const compareChoices = (user, comp) => {
   //TIE
-  if (user === "R" && comp === "rock") {
-    console.log(`User chose ${user} and computer chose ${comp} TIE`);
-  } else if (user === "P" && comp === "paper") {
-    console.log(`User chose ${user} and computer chose ${comp} TIE`);
-  } else if (user === "S" && comp === "scissors") {
-    console.log(`User chose ${user} and computer chose ${comp} TIE`);
+  if (user === "rock" && comp === "rock") {
+    gameInfo.innerText = `User chose ${user} and computer chose ${comp} TIE`;
+    userValue.innerText = "🧱";
+    compValue.innerText = "🧱";
+  } else if (user === "paper" && comp === "paper") {
+    gameInfo.innerText = `User chose ${user} and computer chose ${comp} TIE`;
+    userValue.innerText = "📝";
+    compValue.innerText = "📝";
+  } else if (user === "scissors" && comp === "scissors") {
+    gameInfo.innerText = `User chose ${user} and computer chose ${comp} TIE`;
+    userValue.innerText = "✂️";
+    compValue.innerText = "✂️";
   }
   //ROCK
-  else if (user === "R" && comp === "scissors") {
-    console.log(`User chose ${user} and computer chose ${comp} YOU WIN`);
-  } else if (user === "S" && comp === "rock") {
-    console.log(`User chose ${user} and computer chose ${comp} YOU LOOSE`);
+  else if (user === "rock" && comp === "scissors") {
+    gameInfo.innerText = `User chose ${user} and computer chose ${comp} YOU WIN`;
+    userValue.innerText = "🧱";
+    compValue.innerText = "✂️";
+    userScore += 1;
+    userDisplayScore.innerText = userScore;
+  } else if (user === "scissors" && comp === "rock") {
+    gameInfo.innerText = `User chose ${user} and computer chose ${comp} YOU LOOSE`;
+    userValue.innerText = "✂️";
+    compValue.innerText = "🧱";
+    compScore += 1;
+    compDisplayScore.innerText = compScore;
   }
   //PAPER
-  else if (user === "P" && comp === "rock") {
-    console.log(`User chose ${user} and computer chose ${comp} YOU WIN`);
-  } else if (user === "R" && comp === "paper") {
-    console.log(`User chose ${user} and computer chose ${comp} YOU LOOSE`);
+  else if (user === "paper" && comp === "rock") {
+    gameInfo.innerText = `User chose ${user} and computer chose ${comp} YOU WIN`;
+    userValue.innerText = "📝";
+    compValue.innerText = "🧱";
+    userScore += 1;
+    userDisplayScore.innerText = userScore;
+  } else if (user === "rock" && comp === "paper") {
+    gameInfo.innerText = `User chose ${user} and computer chose ${comp} YOU LOOSE`;
+    userValue.innerText = "🧱";
+    compValue.innerText = "📝";
+    compScore += 1;
+    compDisplayScore.innerText = compScore;
   }
   //SCISSORS
-  else if (user === "S" && comp === "paper") {
-    console.log(`User chose ${user} and computer chose ${comp} YOU WIN`);
-  } else if (user === "P" && comp === "scissors") {
-    console.log(`User chose ${user} and computer chose ${comp} YOU LOOSE`);
+  else if (user === "scissors" && comp === "paper") {
+    gameInfo.innerText = `User chose ${user} and computer chose ${comp} YOU WIN`;
+    userValue.innerText = "✂️";
+    compValue.innerText = "📝";
+    userScore += 1;
+    userDisplayScore.innerText = userScore;
+  } else if (user === "paper" && comp === "scissors") {
+    gameInfo.innerText = `User chose ${user} and computer chose ${comp} YOU LOOSE`;
+    userValue.innerText = "📝";
+    compValue.innerText = "✂️";
+    compScore += 1;
+    compDisplayScore.innerText = compScore;
   }
 };
-
-compareChoices(userChoice, compFinalValue);
